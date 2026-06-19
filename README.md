@@ -105,7 +105,7 @@ may not work because the minecraft_world volume needs to be updated and re-binde
 | phpMyAdmin | http://localhost:8060 | DB credentials in compose file variables (default: root/changeme, user1/changeme1) |
 | Grafana | http://localhost:3000 | Default login: admin / admin |
 
-> **Note:** Remember to change your usernames and passwords credentials in `mysql_credentials.cnf`,`compose.yml` and Grafana login page to avoid undesired logins.
+> **Note:** Remember to change your usernames and passwords credentials in `/config/mysql/mysql_credentials.cnf`,`compose.yml` and Grafana login page to avoid undesired logins.
 
 ---
 
