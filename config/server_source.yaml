@@ -1,0 +1,8 @@
+datasources:
+  - name: My_Minecraft_server
+    type: prometheus
+    access: proxy
+    url: http://puller:9090
+    isDefault: true
+    editable: true
+

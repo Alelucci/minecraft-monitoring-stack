@@ -1,0 +1,43 @@
+# Log level of the application
+logLevel: "info"
+
+# Port for the metrics server
+port: 8080
+# Interval in which remote_write is invoked when enabled
+interval: "5m"
+# Name of the instance, used to label metrics. Defaults to hostname when empty
+instance: ""
+# Indicate if the number of metrics should be reduced (Useful when using grafana cloud)
+reduceMetrics: false
+# Set the server type (vanilla, forge, paper, neoforge), used for RCON collection
+server: "vanilla"
+# Enable dynmap metrics collection
+dynmap: false
+# Directory where the minecraft world is saved
+world: "/world"
+
+# Configure RCON
+rcon:
+  # Enable rcon, when false this part of the config will be ignored
+  enable: false
+  # The IP/Address of the Server (e.g localhost, example.org, 127.0.0.1)
+  host: "main_server"
+  # RCON port configured in the server settings
+  port: 0
+  # Password used for RCON
+  password: ""
+
+# Configure remote_write behaviour
+remote:
+  # Enable remote write, when false this part of the config will be ignored
+  enable: false
+  # URL to prometheus remote_write endpoint
+  url: ""
+  # Overwrite the instance label for remote write.
+  instance: ""
+  # Name of job under which metrics will be pushed
+  jobName: "minecraft-exporter"
+  # Username and password for Basic Authentication. Leave empty when not required
+  username: ""
+  password: ""
+  

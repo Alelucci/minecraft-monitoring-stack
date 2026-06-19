@@ -1,0 +1,87 @@
+services:
+
+  main_server:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    environment:
+      EULA: "TRUE"
+      MEMORY: 1G
+    volumes:
+      - minecraft_world:/data/world
+      - ./server.properties:/data/server.properties
+      - ./banned-ips.json:/data/banned-ips.json
+      - ./banned-players.json:/data/banned-players.json
+      - ./usercache.json:/data/usercache.json
+      - ./whitelist.json:/data/whitelist.json
+      - ./ops.json:/data/ops.json
+    ports:
+      - "25565:25565"
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: changeme
+      MYSQL_DATABASE: world
+      MYSQL_USER: user1
+      MYSQL_PASSWORD: changeme1
+
+    volumes:
+      - db_data:/var/lib/mysql
+
+  db_interface:
+    image: phpmyadmin:latest
+    depends_on:
+      - db
+    ports: 
+      - "8060:80"
+
+  exporter:
+    image: heathcliff26/minecraft-exporter:latest
+    user: root
+    restart: always
+    volumes:
+      - minecraft_world:/world
+      - ./config/exporter.yaml:/config/config.yaml
+    command: ["-config", "/config/config.yaml"]
+    depends_on:
+      main_server:
+        condition: service_healthy
+        restart: true
+    #ports: 
+    #  - "8081:80"
+    
+  puller:
+    image: prom/prometheus:latest
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    depends_on:
+      - exporter
+    #ports:
+    #  - "9090:9090"
+
+  monitor:
+    image: grafana/grafana:latest
+    user: root
+    depends_on:
+      - puller
+    volumes:
+      - grafana_storage:/var/lib/grafana 
+      - ./config/server_source.yaml:/etc/grafana/provisioning/datasources/My_Minecraft_server.yaml
+      - ./config/dashboards:/etc/grafana/provisioning/dashboards
+    ports:
+      - "3000:3000"
+
+volumes:
+  db_data:
+  grafana_storage:
+  minecraft_world:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./world
+
