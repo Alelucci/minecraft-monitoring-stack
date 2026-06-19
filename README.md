@@ -121,8 +121,7 @@ minecraft-monitoring-stack/
 │   │
 │   ├── mysql/
 │   │   ├── mysql_credentials.cnf                   # credestials used by scripts to access database
-│   │   ├── players_insert.sql                      # mysql command to insert or update player's infos
-│   │   └── players_table.sql                       # mysql command to create table players
+│   │   └── players_table.sql                       # mysql command to create table "players"
 │   │
 │   ├── exporter.yaml                               # metrics exporter extra configs
 │   ├── prometheus.yaml                             # prometheus metrics scrape config
