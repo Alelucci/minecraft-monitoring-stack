@@ -21,7 +21,8 @@ The stack includes:
 
 ## 🏗️ Architecture
 
-```                           :25565
+``` 
+                              :25565
                               |
                     ┌─────────|─────────┐
                     │  Minecraft Server │
