@@ -87,11 +87,11 @@ docker compose up -d
 docker compose ps
 ```
 > **Note:** If its the first run of the compose the exporter container may be shutting down or restarting, it will fix itself after at least one player joined the minecraft world and after a restart using
-```bash
-docker compose down
-docker compose up -d
-```
-using `docker compose restart` may not work because the minecraft_world volume needs to be updated and re-binded
+>```bash
+>docker compose down
+>docker compose up -d
+>```
+> using `docker compose restart` may not work because the minecraft_world volume needs to be updated and re-binded
 
 ### Access the services
 
