@@ -175,6 +175,7 @@ The Minecraft Exporter exposes game server metrics (players online, TPS, memory 
 - Grafana alerting for server downtime or low TPS
 - Expand MySQL schema to track more player statistics
 - Setup a .env file for easier compose environmental variables management
+- Automate RCON metrics export
 
 ---
 
