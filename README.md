@@ -25,10 +25,10 @@ The stack includes:
                               :25565
                               |
                     ┌─────────|─────────┐
-                    │  Minecraft Server │
+                    │  Minecraft Server ├─ mc_cli.sh, mc_follow.sh, backup.sh
                     └─────────┬─────────┘
                               │
-              ┌───────────────┼────────────────┐
+    players_data_to_db.sh ────┼────────────────┐
               │                                │
       ┌───────▼────────┐            ┌──────────▼──────────┐
       │      MySQL     │            │ Minecraft Exporter  │
