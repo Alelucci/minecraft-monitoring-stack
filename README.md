@@ -142,6 +142,7 @@ minecraft-monitoring-stack/
 ├── usercache.json                                  # minecraft/usercache.json file
 └── whitelist.json                                  # minecraft/whitelist.json file
 ```
+> **Note:** Files like `whitelist.json`, `ops.json`, `banned-*.json`, `mysql_credentials.cnf` are committed as empty placeholders required by the Minecraft server's bind mounts. They contain no real data.
 
 ---
 
@@ -166,6 +167,7 @@ The Minecraft Exporter exposes game server metrics (players online, TPS, memory 
 - Exposing application metrics in Prometheus format via a dedicated exporter
 - Building Grafana dashboards backed by Prometheus as a data source
 - Structuring a database layer (MySQL + phpMyAdmin) alongside an application service
+- Bash scripting finalized to server management
 
 ---
 
