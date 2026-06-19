@@ -10,10 +10,10 @@ This project runs a Minecraft server alongside a complete monitoring stack, demo
 
 The stack includes:
 
-- **Minecraft Server** — the game server itself
+- **Minecraft Server** — the game server itself, container's image made by [itzg](https://github.com/itzg)
 - **MySQL** — stores player-related data
 - **phpMyAdmin** — web interface for managing the MySQL database
-- **Minecraft Exporter** — exposes server metrics in Prometheus format, made by [heathcliff26](https://github.com/heathcliff26/minecraft-exporter)
+- **Minecraft Exporter** — exposes server metrics in Prometheus format, container's image made by [heathcliff26](https://github.com/heathcliff26/minecraft-exporter)
 - **Prometheus** — collects and stores metrics over time
 - **Grafana** — visualizes metrics through dashboards that were also made by [heathcliff26](https://github.com/heathcliff26/minecraft-exporter)
 
