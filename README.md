@@ -86,7 +86,7 @@ docker compose up -d
 ```bash
 docker compose ps
 ```
-> **Note:** If its the first run of the compose the exporter container may be shutting down or restarting, it will fix itself after at least one player joined the minecraft world and after a restart using
+> **Note:** If its the first run of the compose, the exporter container may be shutting down or restarting, it will fix itself after at least one player joined the minecraft world and after a restart using the commands:
 >```bash
 >docker compose down
 >docker compose up -d
@@ -101,7 +101,7 @@ docker compose ps
 | phpMyAdmin | http://localhost:8060 | DB credentials in compose file variables (default: root/changeme, user1/changeme1) |
 | Grafana | http://localhost:3000 | Default login: admin / admin |
 
-> **Note:** Remember to change your usernames and passwords credentials in `/config/mysql/mysql_credentials.cnf`,`compose.yml` and Grafana login page to avoid undesired logins.
+> **Reminder:** Change your login credentials in `/config/mysql/mysql_credentials.cnf`,`compose.yml` and `Grafana login page` to avoid undesired logins.
 
 ---
 
