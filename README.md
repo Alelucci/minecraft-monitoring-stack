@@ -105,6 +105,8 @@ may not work because the minecraft_world volume needs to be updated and re-binde
 | phpMyAdmin | http://localhost:8060 | DB credentials in compose file variables (default: root/changeme, user1/changeme1) |
 | Grafana | http://localhost:3000 | Default login: admin / admin |
 
+> **Note:** Remember to change your usernames and passwords credentials in `mysql_credentials.cnf`,`compose.yml` and Grafana login page to avoid undesired logins.
+
 ---
 
 ## 📁 Project Structure
@@ -142,7 +144,7 @@ minecraft-monitoring-stack/
 ├── usercache.json                                  # minecraft/usercache.json file
 └── whitelist.json                                  # minecraft/whitelist.json file
 ```
-> **Note:** Files like `whitelist.json`, `ops.json`, `banned-*.json`, `mysql_credentials.cnf` are committed as empty placeholders required by the Minecraft server's bind mounts. They contain no real data.
+> **Note:** Files like `whitelist.json`, `ops.json`, `banned-*.json`, are committed as empty placeholders required by the Minecraft server's bind mounts. They contain no real data.
 
 ---
 
