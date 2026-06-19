@@ -86,7 +86,7 @@ docker compose up -d
 ```bash
 docker compose ps
 ```
-> **Note:** If its the first run of the compose, the exporter container may be shutting down or restarting, it will fix itself after at least one player joined the minecraft world and after a restart using the commands:
+> **Note:** If you are running the compose for the first time or after a reset, the exporter container may be shutting down or restarting, it will fix itself after at least one player joined the minecraft world and after a restart using the commands:
 >```bash
 >docker compose down
 >docker compose up -d
