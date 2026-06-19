@@ -15,7 +15,7 @@ The stack includes:
 - **phpMyAdmin** — web interface for managing the MySQL database
 - **Minecraft Exporter** — exposes server metrics in Prometheus format, made by [heathcliff26](https://github.com/heathcliff26/minecraft-exporter)
 - **Prometheus** — collects and stores metrics over time
-- **Grafana** — visualizes metrics through dashboards
+- **Grafana** — visualizes metrics through dashboards that were also made by [heathcliff26](https://github.com/heathcliff26/minecraft-exporter)
 
 ---
 
