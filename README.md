@@ -1,10 +1,10 @@
-# 🎮 Minecraft Server Monitoring Stack
+# Minecraft Server Monitoring Stack
 
 A self-hosted Minecraft server infrastructure with player data persistence and full observability, built with Docker Compose.
 
 ---
 
-## 📋 Overview
+## Overview
 
 This project runs a Minecraft server alongside a complete monitoring stack, demonstrating container orchestration, data persistence, and infrastructure observability practices.
 
@@ -19,7 +19,7 @@ The stack includes:
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ``` 
                               :25565
@@ -50,7 +50,7 @@ The stack includes:
 
 ---
 
-## 🛠️ Technologies
+## Technologies
 
 | Tool | Purpose |
 |------|---------|
@@ -62,7 +62,7 @@ The stack includes:
 | [Exporter](https://hub.docker.com/r/heathcliff26/minecraft-exporter) | Metrics extractor and exposer |
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -105,7 +105,7 @@ docker compose ps
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 minecraft-monitoring-stack/
@@ -144,7 +144,7 @@ minecraft-monitoring-stack/
 
 ---
 
-## 📦 Data Persistence
+## Data Persistence
 
 - **Minecraft world data** — stored in a Docker volume named "minecraft_world" to persist across container restarts
 - **MySQL player data** — stored in a separate volume named "db_data", independent from the game server lifecycle
@@ -152,13 +152,13 @@ minecraft-monitoring-stack/
 
 ---
 
-## 📈 Monitoring
+## Monitoring
 
 The Minecraft Exporter exposes game server metrics (players online, TPS, memory usage) at a `/metrics` endpoint, scraped by Prometheus every 15 seconds. Grafana queries Prometheus to render real-time dashboards on server health and player activity.
 
 ---
 
-## 🧠 What I learned
+## What I learned
 
 - Multi-container orchestration with service dependencies in Docker Compose
 - Managing stateful data with named volumes across multiple services
@@ -169,7 +169,7 @@ The Minecraft Exporter exposes game server metrics (players online, TPS, memory 
 
 ---
 
-## 🔮 Possible improvements
+## Possible improvements
 
 - Automated MySQL and world data backups
 - Grafana alerting for server downtime or low TPS
